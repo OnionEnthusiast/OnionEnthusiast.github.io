@@ -14,4 +14,4 @@ Hello there! My name is Micah. I am what we in the busness of starting a project
 * [Honeypot SOC/SIEM](/honeypot.md)
 
 # Contact
-*Email: *micah.chesterarter@proton.me
+Email: micah.chesterarter@proton.me
