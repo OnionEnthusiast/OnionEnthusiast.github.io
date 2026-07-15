@@ -6,6 +6,7 @@ Hello there! My name is Micah. I am what we in the busness of starting a project
 
 # Certifications
 * PCAP - Python Institute: Certified Associate Python Programmer
+* Comptia Network+ N10-009 (Work in progress)
 
 # Projects
 * [My Home Lab](/home-lab.md)
