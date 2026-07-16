@@ -5,9 +5,9 @@
 * [Planned Services](#planned-services)
 
 ## Network Configuration
-* Router: Custom built router running the OPNsense operating system. This os was chosen over openwrt, pfsense or a closed source option for its stateful firewall, comaptibility with x86_64 processors, thus enabling upgrades for futer planned network expansions to 10Gb fiber, and the free and opensource nature that forgos the requirement of an account or recuring subscription.
+* Router: Custom built router running the OPNsense operating system. This OS was chosen over openwrt, pfsense or a closed source option for its stateful firewall, compatibility with x86_64 processors, thus enabling upgrades for future planned network expansions to 10Gb fiber, and the free and open source nature that forgoes the requirement of an account or recurring subscription.
 
-* Switches: Currently in use is a Netgear GS305E 5-port managed switch and a Netgear GS308 8-port umanaged switch. These where chosen primarily for their cost, avilibilty, and, in the case of the GS305E, features.
+* Switches: Currently in use is a Netgear GS305E 5-port managed switch and a Netgear GS308 8-port un-managed switch. These where chosen primarily for their cost, availability, and, in the case of the GS305E, features.
 
 * Acess Points: The network contains one access point, a Ubiquity U6 Pro, for all VLANs as the physical area of the network is well within its range and one AP supports more then enough VLANs.
 
@@ -29,5 +29,7 @@
 * DNS Filtering: Likely going to leverage [Pi-Hole](https://pi-hole.net/) to enable ad-blocking for devices that are unable to have client side ad-blockers.
   
 * Remote Client Access: Utilizing [Netbird](https://netbird.io/) I will enable remote clients to have access to the services hosted on the network.
+
+* Git Server: To manage the configuration and codebase of all of my projects.
   
 [Top](#my-home-lab)
