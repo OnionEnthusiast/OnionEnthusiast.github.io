@@ -1,2 +1,1 @@
-# My Home Lab
-### [Back](/index.md)
+# My Home Lab ---- ### [Back](/index.md)
