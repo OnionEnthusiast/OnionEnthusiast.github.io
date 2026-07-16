@@ -29,4 +29,5 @@
 * DNS Filtering: Likely going to leverage PI-hole to enable ad-blocking for devices that are unable to have client side ad-blockers.
   
 * Remote Client Access: Utilizing Netbird I will enable remote clients to have access to the services hosted on the network.
+  
 [Top](#sections)
