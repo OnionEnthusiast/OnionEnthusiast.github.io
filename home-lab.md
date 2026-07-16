@@ -13,11 +13,11 @@
 
 * VLANs: There is currently guest, home, and service VLANs within the network. The guest VLAN will be completely untrusted and only allow traffic to the wider internet. The home VLAN will allow connection to the services network and to the wider internet. All traffic leaving the home VLAN to the wider internet will be routed through mulvad to improve the OpSec of the private portion of the network. The services VLAN will not be able to connect to the wider internet with very few exceptions such as netbird or tailscale.
 
-[Top](#sections)
+[Top](#my-home-lab)
 
 ## Implemented Services
 
-[Top](#sections)
+[Top](#my-home-lab)
 
 ## Planned Services
 * Jellyfin Media Server: A home video server that would allow me to stream media from any device within my network.
@@ -30,4 +30,4 @@
   
 * Remote Client Access: Utilizing Netbird I will enable remote clients to have access to the services hosted on the network.
   
-[Top](#sections)
+[Top](#my-home-lab)
