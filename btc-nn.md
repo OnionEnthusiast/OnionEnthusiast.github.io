@@ -11,15 +11,15 @@ After reading about the power of neural networks in image classification I began
 [Top](#bitcoin-price-action-predictor)
 
 ## Methodology:
-  1. [Data Pre-Formating & Labeling](#data-preformating-&-labeling)
-  2. [Model Architecture & Training](#model-architecture-&-training)
+  1. [Data Pre-Formating & Labeling](#data-preformating-and-labeling)
+  2. [Model Architecture & Training](#model-architecture-and-training)
   3. [Model Validation](#model-validation)
   4. [Comparison With Stochastic Methods](#comparison-with-stochastic-methods)
   5. [Conclusion](#conclusion)
 
 [Top](#bitcoin-price-action-predictor)
 
-## Data Pre-Formating & Labeling
+## Data Pre-Formating and Labeling
 The raw data provided by our source prevents several problems that must be addressed before the model can be labeled. Placing them in order of ease of solving we have:
 1. Data shows price at a time stamp rather than the change in that price over that time period.
 2. Data is non-normalized.
@@ -39,7 +39,7 @@ In order to label our data points we need to first understand the goal of the mo
 
 [Top](#bitcoin-price-action-predictor)
 
-## Model Architecture & Training
+## Model Architecture and Training
 
 [Top](#bitcoin-price-action-predictor)
 
