@@ -41,6 +41,18 @@ In order to label our data points we need to first understand the goal of the mo
 [Top](#motivation)
 
 ## Model Architecture and Training
+### Model Architecture
+
+
+### Final Data Prep
+
+
+### Model Training
+
+
+[Top](#motivation)
+
+## Model Validation
 
 [Top](#motivation)
 
