@@ -13,11 +13,12 @@
 
 * VLANs: There is currently guest, home, and service VLANs within the network. The guest VLAN will be completely untrusted and only allow traffic to the wider internet. The home VLAN will allow connection to the services network and to the wider internet. All traffic leaving the home VLAN to the wider internet will be routed through mulvad to improve the OpSec of the private portion of the network. The services VLAN will not be able to connect to the wider internet with very few exceptions such as Netbird or Tailscale.
 
-[Top](#my-home-lab)
+[Top](#sections)
 
 ## Implemented Services
 
-[Top](#my-home-lab)
+
+[Top](#sections)
 
 ## Planned Services
 * [Jellyfin Media Server](https://jellyfin.org/): A home video server that would allow me to stream media from any device within my network.
@@ -32,4 +33,5 @@
 
 * Git Server: To manage the configuration and codebase of all of my projects.
   
-[Top](#my-home-lab)
+
+[Top](#sections)
