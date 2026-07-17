@@ -8,7 +8,7 @@ After reading about the power of neural networks in image classification I began
 
 *   The specific source for the data used can be found [here](https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data).
 
-[Top](#bitcoin-price-action-predictor)
+[Top](#motivation)
 
 ## Methodology:
   1. [Data Pre-Formating & Labeling](#data-preformating-and-labeling)
@@ -17,7 +17,7 @@ After reading about the power of neural networks in image classification I began
   4. [Comparison With Stochastic Methods](#comparison-with-stochastic-methods)
   5. [Conclusion](#conclusion)
 
-[Top](#bitcoin-price-action-predictor)
+[Top](#motivation)
 
 ## Data Pre-Formating and Labeling
 The raw data provided by our source prevents several problems that must be addressed before the model can be labeled. Placing them in order of ease of solving we have:
@@ -37,15 +37,17 @@ As with any data set in the real world there is bound to be internal inconsisten
 ### Labeling.
 In order to label our data points we need to first understand the goal of the model, to predict the next time interval’s price action. In order to do this we will be using the price action of as many preceding data points as we can reasonably fit into memory. Thus we will be constructing an N length vector of previous price actions labeled with what was done, 0 for no change, +1 for increases, and -1 for decreases. For our use case I will be using N=8 due to the fact that my laptop does not have a lot of ram.
 
-[Top](#bitcoin-price-action-predictor)
+
+[Top](#motivation)
 
 ## Model Architecture and Training
 
-[Top](#bitcoin-price-action-predictor)
+[Top](#motivation)
 
 ## Comparison With Stochastic Methods
 
-[Top](#bitcoin-price-action-predictor)
+
+[Top](#motivation)
 
 ## Conclusion
 
