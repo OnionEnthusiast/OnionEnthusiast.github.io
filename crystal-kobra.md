@@ -1,2 +1,2 @@
 # Crystal Kobra - [Back](/index.md)
-## This is a WIP
+This page is a WIP.
