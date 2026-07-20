@@ -41,13 +41,11 @@ In order to label our data points we need to first understand the goal of the mo
 [Top](#motivation)
 
 ## Model Architecture and Training
-### Model Architecture
+For this project we will be using the MLPClassifier function from scikit-learn with two hidden layers, one of 64 neurons and one of 32 neurons. This should hopefully enable us to capture the majority of any existing complex relationships in the data. Additionally we will be using the ADAM solver, logistic activation function and one thousand itterations.
+[image blocked:Image of the model creation code](/btc-nn/model_creation_code.png)
 
-
-### Final Data Prep
-
-
-### Model Training
+### Final Data Preperation
+We will need 
 
 
 [Top](#motivation)
