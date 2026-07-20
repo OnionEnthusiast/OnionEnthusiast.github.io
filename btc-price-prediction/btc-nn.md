@@ -42,7 +42,8 @@ In order to label our data points we need to first understand the goal of the mo
 
 ## Model Architecture and Training
 For this project we will be using the MLPClassifier function from scikit-learn with two hidden layers, one of 64 neurons and one of 32 neurons. This should hopefully enable us to capture the majority of any existing complex relationships in the data. Additionally we will be using the ADAM solver, logistic activation function and one thousand itterations.
-[image blocked:Image of the model creation code](/btc-price-prediction/model_creation_code.png)
+
+![Image of the model creation code](/btc-price-prediction/model_creation_code.png)
 
 ### Final Data Preperation
 We will need 
