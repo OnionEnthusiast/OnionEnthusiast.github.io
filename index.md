@@ -10,10 +10,10 @@ Hello there! My name is Micah. I am what we in the business of starting a projec
 
 # Projects
 * [My Home Lab](/home-lab.md)
-* [Crystal-Kobra](/crystal-kobra.md)
+<!-- * [Crystal-Kobra](/crystal-kobra.md) -->
 * [Private-Pad](/private-pad.md)
-* [Bitcoin-Price-Predictor](/btc-nn.md)
-* [Honeypot SOC/SIEM](/honeypot-siem.md)
+<!-- * [Bitcoin-Price-Predictor](/btc-nn.md) -->
+<!-- * [Honeypot SOC/SIEM](/honeypot-siem.md) -->
 
 # Contact
 Email: micah.chesterarter@proton.me
