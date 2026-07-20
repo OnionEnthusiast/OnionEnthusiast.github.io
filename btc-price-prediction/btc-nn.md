@@ -4,7 +4,7 @@ After reading about the power of neural networks in image classification I began
 
 ## Technologies
 * Language: As I am the most familiar with python and it being a reasonably well equipped language for this type of problem that is what I decided to use as my language.
-* Libraries: Considering data is extremely readily available on Kaggle in a csv format and the ubiquity of the library, I will be using pandas for the actual handling of data. For the model itself I will be using scikitlearn as it has a reasonably easy api to use for constructing ML models. For data visualization I will be using MatplotLib in order to gain a greater insight into weather or not the data actually beats simply just using a stochastic model.
+* Libraries: Considering data is extremely readily available on Kaggle in a csv format and the ubiquity of the library, I will be using pandas for the actual handling of data. For the model itself I will be using scikitlearn as it has a reasonably easy api to use for constructing ML models. 
 
 *   The specific source for the data used can be found [here](https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data).
 
@@ -13,9 +13,8 @@ After reading about the power of neural networks in image classification I began
 ## Methodology:
   1. [Data Pre-Formating & Labeling](#data-preformating-and-labeling)
   2. [Model Architecture & Training](#model-architecture-and-training)
-  3. [Model Validation](#model-validation)
-  4. [Comparison With Stochastic Methods](#comparison-with-stochastic-methods)
-  5. [Conclusion](#conclusion)
+  3. [Model Validation And Comparison With Stochastic Methods](#model-validation-and-comparison-with-stochastic-methods)
+  4. [Conclusion](#conclusion)
 
 [Top](#motivation)
 
@@ -29,38 +28,71 @@ The raw data provided by our source prevents several problems that must be addre
 Firstly, the data represents the current price. Sure we could look at multiple parts of the data point to understand how the price changes for that segment but what if we need a single number to represent the change for that time interval? The immediate obvious solution would be to take the difference of the opening and closing values (close – open) to get the delta in the price. However, due to the values still being rather large (on the order of dozens of dollars) this is sub optimal. This is because ML models are better able to learn from normalized data sets. A more optimal way to capture the change in value while conforming to the necessity for “well behaved” and normalized data can be derived from the fact that price action is often measured in percentage change. This can lead us to understand that one way to measure the change in price (while again maintaining the special properties) is by dividing the closing price by the opening price. This scales the data to a more manageable size and centers it at one.
 
 ### Data is non-normalized.
-The previous step has thankfully done most of the work for normalizing the data. The data is already reasonably close to zero (as an artifact of the fact that btc doesn't have massive, ie: greater than 1000%,  minute to minute swings). All we have to do now is center the data on zero. If we observe the fact that the data is currently centered around one, as increases are result in a value >1,  decreases result in values between 1 and 0, and a stagnation or lack of change would result in a value of exactly 1, the most obvious solution would be to simply subtract one from each data point. Additionally it is worth noting that the values are extremely small and may be vulnerable to floating point errors due to the low volatility of btc as compared to other crypto-curriencies.
+The previous step has thankfully done most of the work for normalizing the data. The data is already reasonably close to zero (as an artifact of the fact that btc doesn't have massive, ie: greater than 1000%,  minute to minute swings). All we have to do now is center the data on zero. If we observe the fact that the data is currently centered around one, as increases are result in a value >1,  decreases result in values between 1 and 0, and a stagnation or lack of change would result in a value of exactly 1, the most obvious solution would be to simply subtract one from each data point. Additionally it is worth noting that the values are extremely small and may be vulnerable to floating point errors due to the low volatility of btc as compared to other crypto-curriencies. All in all, the code would look like this:
+```python
+import pandas as pd
+
+# Reads the data from the source (in this case it's a csv file located in a sibling directory)
+df = pd.read_csv('../archive/btcusd_1-min_data.csv')
+normalized_df = (df['Close'] / df['Open']) - 1
+normalized_df.to_csv('normalized-btc-data.csv', index=False)
+```
 
 ### Missing lines in data.
-As with any data set in the real world there is bound to be internal inconsistencies and errors in the data collection process. In this case there are several lines where there was no data recorded. The solution I will be taking to this issue is to chunk the data into several pieces using the NaN rows as delimiters. This will ensure I have only contiguous data and will prevent the feeding of a NaN row into the model during training or validation.
+As with any data set in the real world there is bound to be internal inconsistencies and errors in the data collection process. In this case there are thankfully no lines where there was no data recorded. The solution I would be taking to this issue if it was present however is to chunk the data into several pieces using the NaN rows as delimiters. This will ensure I have only contiguous data and will prevent the feeding of a NaN row into the model during training or validation.
 
 ### Labeling.
 In order to label our data points we need to first understand the goal of the model, to predict the next time interval’s price action. In order to do this we will be using the price action of as many preceding data points as we can reasonably fit into memory. Thus we will be constructing an N length vector of previous price actions labeled with what was done, 0 for no change, +1 for increases, and -1 for decreases. For our use case I will be using N=8 due to the fact that my laptop does not have a lot of ram.
+```python
+# Reads the data from the source (in this case it's a csv file)
+df = pd.read_csv('normalized-btc-data.csv')
 
+# Converts the data frame to a list to make the operations easier.
+df_list = df['0'].to_list()
+
+# Loops the list of values and creates a vector of the trailing eight values and the value itself
+x = []
+y = []
+for i in range (len(df_list)):
+    input_vect = []
+    for j in range(i - 9, i):
+        input_vect.append(df_list[j])
+    x.append(input_vect)
+    y.append(1 if df_list[i] > 0 else (0 if df_list[i] == 0 else -1))
+print('Labeling done.')
+```
+
+### Final Data Preparation
+We will need to split the data randomly into a training dataset and a validation dataset to ensure we have a way to verify that the data is not over-fitted. This will be done with a single function call with scikit-learn.
+```python
+from random import randint
+# Separates the training data from the testing data
+X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.20, random_state=randint(0, 1000))
+```
 
 [Top](#motivation)
 
 ## Model Architecture and Training
-For this project we will be using the MLPClassifier function from scikit-learn with two hidden layers, one of 64 neurons and one of 32 neurons. This should hopefully enable us to capture the majority of any existing complex relationships in the data. Additionally we will be using the ADAM solver, logistic activation function and one thousand itterations.
+For this project we will be using the MLPClassifier function from scikit-learn with two hidden layers, one of 64 neurons and one of 32 neurons. This should hopefully enable us to capture the majority of any existing complex relationships in the data. Additionally we will be using the ADAM solver, logistic activation function and one thousand iterations.
 ```python
 # Creates a prediction model
 print("Training Started")
+from sklearn.neural_network import MLPClassifier
 model = MLPClassifier(hidden_layer_sizes=(64, 32, ), max_iter=1000, activation='logistic', solver='adam')
-model.fit(X_train, y_train)
 ```
 
-### Final Data Preperation
-We will need 
-
-
 [Top](#motivation)
 
-## Model Validation
-
-[Top](#motivation)
-
-## Comparison With Stochastic Methods
-
+## Model Validation And Comparison With Stochastic Methods
+One simple metric to validate a model against is its accuracy at predicting the data, this can then be compared to a baseline of a stochastic strategy to understand how good, or bad, a model is. To check our model's accuracy we can simply run:
+```python
+# Checks the accuracy of the model against the
+from sklearn.metrics import accuracy_score
+y_pred = model.predict(x_test)
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy: " + str(accuracy))
+```
+In the case of my testing, my model had an accuracy of ~53.10%. When looking at the data in the dataset we can observe that ~34.11% of the data result in an increase in value, ~33.02% result in no change in value, and ~32.88% of data points result in a decrease of value. 
 
 [Top](#motivation)
 
