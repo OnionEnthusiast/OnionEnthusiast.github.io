@@ -92,10 +92,11 @@ y_pred = model.predict(x_test)
 accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy: " + str(accuracy))
 ```
-In the case of my testing, my model had an accuracy of ~53.10%. When looking at the data in the dataset we can observe that ~34.11% of the data result in an increase in value, ~33.02% result in no change in value, and ~32.88% of data points result in a decrease of value. 
+In the case of my testing, my model had an accuracy of ~53.10%. When looking at the data in the dataset we can observe that ~34.11% of the data result in an increase in value, ~33.02% result in no change in value, and ~32.88% of data points result in a decrease of value. This indicates a positive expected value or in other words, the value tends to increase over the long run. Additionally the model out performs the stochastic strategy of always guessing the most common outcome by approximately 20%. This indicates the model is actually finding a pattern in the data that is not immediately apparent.
 
 [Top](#motivation)
 
 ## Conclusion
+It is generally understood that neural networks are extremely powerful tools for data prediction and analysis. While the testing done above has several avenues for improvement that are glaringly obvious, such as improving the size of the neural network or improving the breadth of parameters, the fact that the model was so easily able to out perform stochastic models speaks well to the utility of this tool. Larger and more optimized neural networks could very easily be integrated with API trading strategies to enable more advanced automated trading systems.
 
 [Top](#bitcoin-price-action-predictor)
