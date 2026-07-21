@@ -9,11 +9,9 @@ Hello there! My name is Micah. I am what we in the business of starting a projec
 * [CompTIA Network+ N10-009](https://www.comptia.org/en-us/certifications/network/) (Work in progress)
 
 # Projects
-* [My Home Lab](/home-lab/home-lab.md)
-<!-- * [Crystal-Kobra](/crystal-kobra.md) -->
+* [My Home Lab](/home-lab/home-lab.md) <!-- * [Crystal-Kobra](/crystal-kobra.md) -->
 * [Private-Pad](/private-pad/private-pad.md)
-* [Bitcoin-Price-Predictor](/btc-price-prediction/btc-nn.md)
-<!-- * [Honeypot SOC/SIEM](/honeypot-siem.md) -->
+* [Bitcoin-Price-Predictor](/btc-price-prediction/btc-nn.md) <!-- * [Honeypot SOC/SIEM](/honeypot-siem.md) -->
 
 # Contact
 Email: micah.chesterarter@proton.me
