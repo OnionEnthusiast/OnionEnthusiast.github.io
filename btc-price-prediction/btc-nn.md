@@ -73,12 +73,12 @@ X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.20, random
 [Top](#motivation)
 
 ## Model Architecture and Training
-For this project we will be using the MLPClassifier function from scikit-learn with two hidden layers, one of 64 neurons and one of 32 neurons. This should hopefully enable us to capture the majority of any existing complex relationships in the data. Additionally we will be using the ADAM solver, logistic activation function and one thousand iterations.
+For this project we will be using the MLPClassifier function from scikit-learn with two hidden layers, one of 64 neurons and one of 32 neurons. This should hopefully enable us to capture the majority of any existing complex relationships in the data. Additionally we will be using the ADAM solver, relu activation function and one thousand iterations.
 ```python
 # Creates a prediction model
 print("Training Started")
 from sklearn.neural_network import MLPClassifier
-model = MLPClassifier(hidden_layer_sizes=(64, 32, ), max_iter=1000, activation='logistic', solver='adam')
+model = MLPClassifier(hidden_layer_sizes=(64, 32, ), max_iter=1000, activation='relu', solver='adam')
 ```
 
 [Top](#motivation)
