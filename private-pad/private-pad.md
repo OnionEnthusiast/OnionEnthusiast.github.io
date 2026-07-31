@@ -1,4 +1,4 @@
-# Private Pad - [Back](/index.md)
+# Private Pad - [Back](/../index.md)
 ## Motivation
 The advent of several critical vulnerabilities along with coming to understand the depth of windows telemetry and its lack of security has motivated me to shift towards a more secure and private setup.
 
