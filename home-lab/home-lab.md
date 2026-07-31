@@ -1,4 +1,4 @@
-# My Home Lab - [Back](/index.md)
+# My Home Lab - [Back](/../index.md)
 ### Sections
 * [Network Configuration](#network-configuration)
 * [Implemented Services](#implemented-services)
