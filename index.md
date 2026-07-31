@@ -2,7 +2,15 @@
 layout: default
 ---
 # About Me
-Hello there! My name is Micah. I am what we in the business of starting a project at 6pm only to blink and it be 3am call a "computer enthusiast". To put it lightly, I’m passionate about computers. I have been working on computers in a hobby and semi-professional capacity for the better part of a decade. Many of my projects can vary quite widely. For example working on anything from building robots that use facial recognition to target the face of a person and fire a Nerf dart, to multiplayer cloud hosted first person shooters, to the data science projects attempting to use a neural network to predict bitcoin price action. Additionally I have a newly built home-lab with several services in various states of planning and production, a fully secured network with multiple VLANs configured, and a fully functioning SIEM currently planned. Professionally speaking I have been working in IT for approximately a year now at a local break/fix computer repair shop. This has greatly improved my ability and familiarity with the windows operating system.
+Hello! My name is Micah, and I'm a lifelong computer enthusiast with a passion for building, learning, and solving complex technical challenges. The kind of person who starts a project in the evening and suddenly realizes it's 3 a.m., I've spent the better part of the past decade working with computers in both hobbyist and semi-professional capacities.
+
+My projects span a wide range of disciplines, including software development, robotics, cybersecurity, cloud infrastructure, and data science. Some of my favorite work includes building a facial recognition-powered Nerf turret, developing multiplayer cloud-hosted first-person shooter games, and experimenting with neural networks to analyze and predict Bitcoin market trends.
+
+Beyond software development, I maintain a home lab where I design, deploy, and manage a variety of self-hosted services. My environment includes a segmented network with multiple VLANs, and I continue expanding its capabilities with projects focused on infrastructure, automation, monitoring, and security, including the implementation of a Security Information and Event Management (SIEM) platform.
+
+Professionally, I have worked in IT for the past year at a local break/fix computer repair shop. This experience has strengthened my troubleshooting skills, deepened my understanding of Windows systems, and provided valuable hands-on experience diagnosing and resolving a wide variety of hardware and software issues.
+
+I enjoy tackling challenging projects that push me to learn new technologies, whether that means writing code, designing networks, deploying infrastructure, or experimenting with emerging tools. For me, every project is an opportunity to expand my knowledge and build something meaningful.
 
 # Certifications
 * [PCAP](https://pythoninstitute.org/pcap) - Python Institute: Certified Associate Python Programmer
