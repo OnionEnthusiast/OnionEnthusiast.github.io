@@ -1,4 +1,4 @@
-# Bitcoin Price Action Predictor - [Back](/index.md)
+# Bitcoin Price Action Predictor - [Back](/../index.md)
 ## Motivation
 After reading about the power of neural networks in image classification I began to ponder what other classification topics it could be useful for and naturally, as I had recently been looking into the viability of crypto mining, decided to look into the viability of a classification neural network in predicting price action for BTC. If there was an edge to be gained from this it could potentially be extremely profitable.
 
@@ -7,8 +7,6 @@ After reading about the power of neural networks in image classification I began
 * Libraries: Considering data is extremely readily available on Kaggle in a csv format and the ubiquity of the library, I will be using pandas for the actual handling of data. For the model itself I will be using scikitlearn as it has a reasonably easy api to use for constructing ML models. 
 
 *   The specific source for the data used can be found [here](https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data).
-
-[Top](#motivation)
 
 ## Methodology:
   1. [Data Pre-Formating & Labeling](#data-preformating-and-labeling)
