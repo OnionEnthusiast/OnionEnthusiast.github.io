@@ -5,7 +5,7 @@
 * [Planned Services](#planned-services)
 
 ## Network Configuration
-* Router: Custom built router running the OPNsense operating system. This OS was chosen over openwrt, pfsense or a closed source option for its stateful firewall, compatibility with x86_64 processors, thus enabling upgrades for future planned network expansions to 10Gb fiber, and the free and open source nature that forgoes the requirement of an account or recurring subscription.
+* Router: Custom built router running the OPNsense operating system. This OS was chosen over openwrt, pfsense or a closed source option for its stateful firewall, compatibility with x86_64 processors, thus enabling upgrades for future planned network expansions to 5Gb fiber, and the free and open source nature that forgoes the requirement of an account or recurring subscription.
 
 * Switches: Currently in use is a Netgear GS305E 5-port managed switch and a Netgear GS308 8-port un-managed switch. These where chosen primarily for their cost, availability, and, in the case of the GS305E, features.
 
